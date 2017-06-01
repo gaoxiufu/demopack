@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{CHARSET}">
+		<title></title>
+	</head>
+	<body>
+		<input type="radio" name="5" value="10" class="itme"/>篮球10</br>
+		<input type="radio" name="5" value="20" class="itme"/>篮球20</br>
+		<input type="text"  value="0" id="id_5"/>5临时</br>
+		<input type="checkbox" name="1" value="10" class="itme"/>篮球10</br>
+		<input type="checkbox" name="2" value="10" class="itme"/>足球10</br>
+		<input type="checkbox" name="3" value="20" class="itme"/>排球20</br>
+		<input type="radio" name="4" value="10" class="itme"/>篮球10</br>
+		<input type="radio" name="4" value="20" class="itme"/>篮球20</br>
+		<input type="radio" name="4" value="30" class="itme"/>篮球30</br>
+		<input type="text"  value="0" id="id_4"/>4临时</br>
+		<input type="text"  value="0" id="name"/>区别</br>
+		<div id="zj">100</div>
+	</body>
+	<script type="text/javascript" src="jquery.min.js"></script>
+	<script type="text/javascript">
+		$('.itme').change(function(){
+			var zj=$('#zj').text();
+			var dj=$(this).val();
+			
+			
+			 var type = $(this).attr('type');//input类型
+			
+			 
+			  if (type == 'checkbox') {
+			  	if ($(this).is(':checked')) {
+                zj = Number(zj)+ Number(dj);
+          		 } else {
+                zj = Number(zj)- Number(dj);
+            	}
+			  }
+			  
+	
+			  if (type == 'radio') {			  			 
+			  	var temp_total = 0;//临时总价
+	            var temp_pc = 0;//临时单价	        
+	            var name = $(this).attr('name');//获取单选项name
+	            var rows = $("input[name='" + name + "']");
+	            var temp_name=$('#name').val();
+	            var temp=$('#id_'+name+'').val();	                   
+	            rows.each(function (i) {
+	                temp_total = Number($(rows[i]).val()) + Number(temp_total);
+	                //判断选中状态
+//	                if ($(this).is(':checked')) {
+//	                    temp_pc = $(this).val();
+//	                  $('#hidden').val(temp_pc);
+//	                }
+	              
+	                 $('#id_'+name+'').val(dj) // 单价到对应的临时单价下
+	              
+	
+	           });
+				if(temp_name==0){  // 第一次选择
+					alert('第一次');
+					$('#name').val(name);
+					 zj = Number(zj) + Number(dj);
+				}
+				
+				if(temp_name==name && temp_name>0){ //选择同类 价格
+					alert('名字一样');
+					
+					 zj = Number(zj) + Number(dj)-Number(temp);
+				}
+				
+				if(name!=temp_name &&temp_name>0){ // 选择不同类价格
+					alert('不名字一样');
+					$('#name').val(name);
+					zj = Number(zj) + Number(dj)-Number(temp);							
+				}
+
+	        
+	            console.log(temp_total);
+	            console.log(temp_pc);
+	            console.log(dj);
+
+	            console.log(zj);
+			  }
+          			
+			$('#zj').html(zj);
+		});
+		
+	</script>
+</html>
