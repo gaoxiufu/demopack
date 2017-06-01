@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>WeUI</title>
+    <!-- 引入 WeUI -->
+    <link rel="stylesheet" href="http://res.wx.qq.com/open/libs/weui/0.4.2/weui.css"/>
+</head>
+<body>
+<!--<div class="weui_cells_title">活动信息样式</div>-->
+<div class="article">
+    <div class="hd">
+        <?php foreach($rows as $row): ?>
+        <h1 class="page_title"><?php echo $row['title']; ?></h1>
+    </div>
+    <div class="bd">
+        <article class="weui_article">
+            <p><?php echo $row['content']; ?></p>
+        </article>
+        <?php endforeach;?>
+    </div>
+</div>
+</body>
+</html>

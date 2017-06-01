@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+    <title>欢迎光临和尚用飘柔美发店</title>
+    <!-- 引入 WeUI -->
+    <link rel="stylesheet" href="http://res.wx.qq.com/open/libs/weui/0.4.2/weui.css"/>
+</head>
+<body>
+<!-- 使用 -->
+<br/>
+<a href="javascript:;" class="weui_btn weui_btn_mini  weui_btn_primary">我要预约</a>
+
+<form action="http://phpweixin.itsource.cn/team16/vip/index.php?p=Home&c=Wechat&a=add" method="post">
+
+    <div class="weui_cells weui_cells_access">
+        <a class="weui_cell" href="javascript:;">
+            <div class="weui_cell_bd weui_cell_primary">
+                <p>我的名字</p>
+            </div>
+            <div class="weui_cell_ft"><?php echo $res['realname']?></div>
+            <input type="hidden" name="realname" value="<?php echo $res['realname']?>">
+            <input type="hidden" name="phone" value="<?php echo $res['telephone']?>">
+        </a>
+
+    </div>
+    <div class="weui_cells">
+
+        <div class="weui_cell weui_cell_select weui_select_after">
+            <div class="weui_cell_hd">
+                <label for="" class="weui_label">美发师</label>
+            </div>
+            <div class="weui_cell_bd weui_cell_primary">
+                <select class="weui_select" name="barber">
+                    <?php foreach($rows as $row):?>
+                        <option value="<?php echo $row['realname']?>" ><?php echo $row['realname']?></option>
+                    <?php endforeach;?>
+                </select>
+            </div>
+
+        </div>
+    </div>
+    <input type="submit" class="weui_btn weui_btn_primary" value="提交表单" />
+    </div>
+
+    </div>
+</form>
+</body>
+</html>

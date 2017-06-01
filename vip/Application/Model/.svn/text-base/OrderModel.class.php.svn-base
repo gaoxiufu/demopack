@@ -1,0 +1,28 @@
+<?php
+class OrderModel extends Model{
+    //  创建方法 展示所有的预约
+    public function getLists(){
+        return $rows = $this->getAll();
+    }
+    //按照id修改用户
+    public function edit($id){
+//        var_dump($id);exit;
+        //  调用getList显示一条数据
+        return $rows = $this->getRowByKey($id);
+    }
+    //  执行修改
+    public function update($post){
+        $post  = $_POST;
+//        var_dump($post);exit;
+        return $rows = $this->modify($post);
+    }
+    //创建getlist方法
+    public function getList($fields="*",$pageIndex=1,$pageSize=3){
+        //获取所有数据
+        return $this->getPage($fields,$pageIndex,$pageSize);
+    }
+//书写方法获取总的条数
+    public function getRecordsCount(){
+        return $this->getCount();
+    }
+}
