@@ -1,0 +1,1 @@
+SELECT * FROM `gao_weixin` WHERE `open_id`='oenrgvlNw5vw6J5AoihsjtKYTzMg' ORDER BY `time` DESC LIMIT 1

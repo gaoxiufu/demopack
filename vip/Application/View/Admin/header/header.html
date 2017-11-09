@@ -1,0 +1,73 @@
+
+<form name="listform" id="listform"  action="/index.php?case=table&act=list&table=user&admin_dir=admin&site=default" method="post">
+    <style type="text/css">
+        #right .btn_a {padding:3px 5px;}
+    </style>
+    <div class="blank20"></div>
+    <div id="tagscontent" class="right_box">
+
+        <table border="0" cellspacing="0" cellpadding="0" name="table1" id="table1" width="100%">
+            <thead>
+            <tr class="th">
+                <th align="center">头像</th>
+                <th align="center">编号</th>
+                <th align="center">用户名</th>
+                <th align="center">用户组</th>
+                <th align="center">操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="s_out">
+                <td align="center"></td>
+                <td align="center"></td>
+                <td align="center" style="padding-left:10px;"></td>
+                <td align="center" style="padding-left:10px;"></td>
+                <td align="left" width="10%">
+                    <!--<a onclick="javascript: return confirm('确实要删除吗?');"href="index.php?p=Admin&c=Members&a=delete&id=<?php echo $row['member_id']?>" class="btn_a">删除</a>-->
+                    <!--<a href="index.php?p=Admin&c=Members&a=edit&id=<?php echo $row['member_id']?>" class="btn_a">修改</a>-->
+            </tr>
+            </tbody>
+        </table>
+        <div class="page"><span>1条记录/1页</span><strong>1</strong></div>
+        <div class="blank20"></div>
+    </div>
+    <div class="blank20"></div>
+
+    <input type="hidden" name="batch" value="" />
+
+</form>
+
+
+<div class="blank30"></div>
+<div class="blank30"></div>
+<div class="blank30"></div>
+</div>
+<div class="clear"></div>
+</div>
+
+
+
+<script type="text/javascript" language="javascript" src="/template/admin/skin/js/script.js"></script>
+<script language="javascript" type="text/javascript" src="/template/admin/skin/js/admin.js"></script>
+
+
+<script type="text/javascript">
+    <!--
+    //table("表格名称","奇数行背景","偶数行背景","鼠标经过背景","点击后背景");
+    table("table1","#F5F5F5","#F9F9F9","#FFFFF0","#F5F5F5");
+    table("table2","#F5F5F5","#F9F9F9","#FFFFF0","#F5F5F5");
+    table("table3","#F5F5F5","#F9F9F9","#FFFFF0","#F5F5F5");
+    table("table4","#F5F5F5","#F9F9F9","#FFFFF0","#F5F5F5");
+    table("table5","#F5F5F5","#F9F9F9","#FFFFF0","#F5F5F5");
+    table("table6","#F5F5F5","#F9F9F9","#FFFFF0","#F5F5F5");
+    table("table7","#F5F5F5","#F9F9F9","#FFFFF0","#F5F5F5");
+    table("table8","#F5F5F5","#F9F9F9","#FFFFF0","#F5F5F5");
+    table("table9","#FFFFFF","#FFFFFF","#FFFFF0","#FFFFFF");
+    // -->
+
+    //去掉虚线框
+    function bluring(){
+        if(event.srcElement.tagName=="A"||event.srcElement.tagName=="IMG") document.body.focus();
+    }
+    document.onfocusin=bluring;
+</script>

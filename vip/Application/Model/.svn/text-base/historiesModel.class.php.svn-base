@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * Created by PhpStorm.
+ * User: Administrator
+ * Date: 2016/5/11
+ * Time: 14:59
+ */
+class HistoriesModel extends Model{
+
+
+
+    //创建getlist方法
+    public function getList($fields="*",$pageIndex=1,$pageSize=3){
+        //获取所有数据
+        return $this->getPage($fields,$pageIndex,$pageSize);
+    }
+//书写方法获取总的条数
+    public function getRecordsCount(){
+        return $this->getCount();
+    }
+
+
+
+    //  会员消费
+    public function getlistgroup($field,$condition,$group,$field1){
+        return $this->getdatabygroup($field, $condition, $group, $field1);
+    }
+    //  会员充值
+    public function recharge($field,$condition,$group,$field1){
+        $rows = $this->getdatabygroup($field, $condition, $group, $field1);
+//        var_dump($rows);exit;
+        return $this->getdatabygroup($field, $condition, $group, $field1);
+    }
+
+    //创建方法 按照名字 搜索会员记录
+    public function showRecord($realname){
+//       $condition=$realname;
+       return $this->condition($realname);
+
+    }
+
+
+}

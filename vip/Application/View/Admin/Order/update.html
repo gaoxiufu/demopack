@@ -1,0 +1,41 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN">
+<head>
+    <title>城乡结合部洗剪吹造型设计</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" type="text/css" href="./Public/reply/style/skin.css" />
+
+
+    <style type="text/css">
+
+    </style>
+</head>
+<body>
+<div id="body">
+    <h3>后台管理  预约回复</h3>
+    <div id="cont" style="padding-bottom:10px;">
+        <!-- 留言区域开始 -->
+        <div class="mes" style="padding-bottom:0px;">
+            <div class="reply">
+
+            </div>
+            <div id="lev" style="display:block;border:none;">
+                <form action="index.php?p=Admin&c=Order&a=update" method="POST" style="margin:15px;">
+                    回复/更改：<br />
+                    <textarea name="reply"></textarea><br />
+                    <input type="hidden" name="order_id" value="<?php echo $rows['order_id']; ?>">
+                    <input class="c1" type="submit" value="提交" /><input class="c1" type="reset" value="重填" />
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="foot">
+        <p>城乡结合部洗剪吹造型设计 后台管理 CmsE</p>
+        <p>城乡结合部洗剪吹造型设计 www.CmsE.cn</p>
+    </div>
+</div>
+</body>
+</html>
